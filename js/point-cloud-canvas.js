@@ -1,12 +1,15 @@
 class pointCloudSvg {
-    constructor(svgID) {
-        this.svg = document.getElementById(svgID);
+    constructor(svgID, deleteAllButtonID) {
         this.draggedElement = null;
         this.preventNextMouseClick = false;
+
+        this.svg = document.getElementById(svgID);
+        this.btDeleteAll = document.getElementById(deleteAllButtonID);
 
         this.svg.addEventListener("click", (evt) => this.createPoint(evt) );
         this.svg.addEventListener('mousemove', (evt) => this.drag(evt));
         this.svg.addEventListener('mouseup', (evt) => this.endDrag(evt));
+        this.btDeleteAll.addEventListener("click", () => this.deleteAllPoints());
     }
 
     getAdjustedMouseCoords(evt){
@@ -23,7 +26,7 @@ class pointCloudSvg {
         return { x: x, y: y };
     }
 
-    // -- create point
+    // -- create/delete point
 
     createPoint(evt) {
         if(this.preventNextMouseClick === true){
@@ -42,6 +45,10 @@ class pointCloudSvg {
 
         this.svg.appendChild(circle);
     }
+
+    deleteAllPoints() {
+        this.svg.innerHTML = "";
+      }
 
     // -- drag events
 
