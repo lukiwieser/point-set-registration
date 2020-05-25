@@ -1,0 +1,30 @@
+.content-box {
+  margin: 5px;
+  width: 400px; }
+  .content-box__heading {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: inherit; }
+  .content-box__content {
+    width: 400px;
+    padding: 5px;
+    border: 4px solid black;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+
+.point-cloud-box {
+  width: 400px;
+  height: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 4px solid black; }
+
+.point-cloud-svg {
+  width: 100%;
+  height: 100%; }
+
+.cavas__star {
+  fill: #ff0000;
+  opacity: 1; }
+  .cavas__star:hover {
+    opacity: 0.5; }
